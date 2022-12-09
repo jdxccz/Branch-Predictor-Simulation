@@ -68,7 +68,7 @@ void train_selector(struct selector *s,uint8_t Lout,uint8_t Rout, uint8_t outcom
   uint32_t index = s->history & s->mask;
   if (Lout == TAKEN && Rout == NOTTAKEN && outcome == TAKEN && s->CHT[index] != 0) s->CHT[index] -= 1;
   if (Lout == TAKEN && Rout == NOTTAKEN && outcome == NOTTAKEN && s->CHT[index] != 3) s->CHT[index] += 1;
-  if (Lout == NOTTAKEN && Rout == TAKEN && outcome == NOTTAKEN && s->CHT[index] != 0) s->CHT[index] -= 0;
+  if (Lout == NOTTAKEN && Rout == TAKEN && outcome == NOTTAKEN && s->CHT[index] != 0) s->CHT[index] -= 1;
   if (Lout == NOTTAKEN && Rout == TAKEN && outcome == TAKEN && s->CHT[index] != 3) s->CHT[index] += 1;
   s->history <<= 1;
   s->history |= outcome;
